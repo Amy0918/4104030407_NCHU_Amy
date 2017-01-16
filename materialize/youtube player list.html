@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<title>Youtube Player List</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head> 
+
+<body> 
+<div class="container">
+<nav>
+    <div class="nav-wrapper">
+      <div class="blue">
+        <a href="https://www.youtube.com/" class="breadcrumb">Youtube</a>
+        <a href="https://www.youtube.com/watch?v=t6fXDIQSkkI&list=PLe_GPn2THvGij6mdI3QxlfZHQCyl9UVN1" class="breadcrumb">蓋世英雄-韋禮安</a>
+      </div>
+    </div>
+  </nav>
+  
+	<div id="VideoThumbs"><!-- 這裡會產生YouTube Thumbs列出影片 --></div>
+	
+	<script type="text/javascript">
+
+		var apiKey = "AIzaSyCIlwa-7d7qpKS0Nj5vhI7tb-0minC-qZ8";
+
+		function getVideos(pid, apiKey) {
+			// PlaylistItems: list 語法參見 https://developers.google.com/youtube/v3/docs/playlistItems/list
+			$.get("https://www.googleapis.com/youtube/v3/playlistItems", {
+				part: "snippet,contentDetails",
+				maxResults: 50,
+				playlistId: pid,
+				key: apiKey},
+				function (data) {
+					document.getElementById("VideoThumbs").innerHTML += '<div style="color:red;">====================================================================================================================================================</div>';
+					// 傳回值參見 https://developers.google.com/youtube/v3/docs/playlistItems#resource-representation
+					$.each(data.items, function (i, item) {
+						var str = '<div style="float:left;font-size:small;margin:5px;">';
+						str += '<a href="https://youtu.be/' + item.snippet.resourceId.videoId + '" target="_blank"><img src="' + item.snippet.thumbnails.medium.url + '" /><br />' + item.snippet.title + '</a><br />';
+						if (item.contentDetails.note !== undefined) str += '<a href="' + item.contentDetails.note + '" target="_blank">延伸閱讀</a><br />';
+						str += '</div>';
+						document.getElementById("VideoThumbs").innerHTML += str;
+					})
+				}
+			);
+		}
+		
+		getVideos("PLe_GPn2THvGij6mdI3QxlfZHQCyl9UVN1", apiKey)	// @解痛伸展操
+		
+	</script>
+<div class="collection">
+    <a href="pixnet.html" class="collection-item">熱門音樂賞析文章</a>
+    <a href="youtube player chose.html" class="collection-item">熱門英文歌分享</a>
+    <a href="youtube player list.html" class="collection-item">熱門音樂推薦_韋禮安</a>
+    <a href="map_location.html" class="collection-item">台中唱片行大搜索</a>
+	<a href="Street View.html" class="collection-item">尋找隱藏歌手</a>
+  </div>
+  
+</div>
+</body>
+</html>

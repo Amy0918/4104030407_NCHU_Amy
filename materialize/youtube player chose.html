@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+  <html>
+    <head>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  
+	  <script type="text/javascript" language="javascript">
+ 
+        function videopanel(id) { 
+            str = '<iframe width="100%" height="350" src="http://www.youtube.com/embed/' + id + '" frameborder="0" allowfullscreen></iframe>';
+            return str;
+        }
+ 
+		function videochange(id) {
+			document.getElementById("player").innerHTML = videopanel(id);		
+		}
+
+      </script>
+	  
+	  
+    </head>
+
+    <body>
+	<div class="container">
+	
+	<nav>
+    <div class="nav-wrapper">
+      <div class="blue">
+        <a href="https://www.youtube.com/" class="breadcrumb">Youtube</a>
+        <a href="https://www.youtube.com/watch?v=1JnxCAdFnq0&list=PLG47EBGFEJNadRs2od3JY5H-LDy2kEq7A" class="breadcrumb">熱門英文歌分享</a>
+      </div>
+    </div>
+  </nav>
+  
+	 <div class="fixed-action-btn toolbar">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li class="waves-effect waves-light"><a href="pixnet.html"><i class="https://openclipart.org/download/260775/music-15.svg">熱門音樂賞析文章</i></a></li>
+      <li class="waves-effect waves-light"><a href="youtube player chose.html"><i class="https://openclipart.org/download/260775/music-15.svg">熱門英文歌分享</i></a></li>
+      <li class="waves-effect waves-light"><a href="youtube player list.html"><i class="https://openclipart.org/download/260775/music-15.svg">熱門音樂推薦_韋禮安</i></a></li>
+      <li class="waves-effect waves-light"><a href="map_location.html"><i class="https://openclipart.org/download/260775/music-15.svg">台中唱片行大搜索</i></a></li>
+	  <li class="waves-effect waves-light"><a href="Street View.html"><i class="https://openclipart.org/download/260775/music-15.svg">尋找隱藏歌手</i></a></li>
+    </ul>
+  </div>
+  
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+	
+	  <div id="player">
+	  <iframe width="100%" height="400" src="http://www.youtube.com/embed/vdlWkeki3_U" frameborder="0" allowfullscreen></iframe>
+	  </div>
+	
+      <br /><br />
+	
+	  <div class="collection">
+        <a class='collection-item' href='javascript:videochange("vdlWkeki3_U")'>英文歌分享Justin Timberlake-Can't Stop The Feeling</a>
+        <a class='collection-item' href='javascript:videochange("RuMD2fzja2Y")'>英文歌分享Taylor Swift-Blank Space</a>
+		<a class='collection-item' href='javascript:videochange("D5J4wqjH51w")'>英文歌分享Charlie Puth feat. Selena Gomez-We Don't Talk Anymore</a>
+        <a class='collection-item' href='javascript:videochange("Q15GXH4E4pw")'>英文歌分享Alan Walker/Iselin Solheim-Faded</a>
+        <a class='collection-item' href='javascript:videochange("Hf_ZT0r8Ttg")'>英文歌分享Rachel Platten-Fight Song</a>
+		<a class='collection-item' href='javascript:videochange("cIVx5Yxzl6E")'>英文歌分享The Chainsmokers feat. Halsey-Closer</a>
+		<a class='collection-item' href='javascript:videochange("1JnxCAdFnq0")'>英文歌分享Ed Sheeran-Photograph</a>
+      </div>
+	</div>
+    </body>
+  </html>
